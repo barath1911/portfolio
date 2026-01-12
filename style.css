@@ -1,0 +1,495 @@
+:root {
+  --bg-main: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --accent: #facc15;      /* Gold */
+  --accent-glow: #c084fc; /* Violet glow */
+  --text-main: #e5e7eb;
+}
+/* ===== GLOBAL ===== */
+body {
+  min-height: 100vh;
+  background: var(--bg-main);
+  font-family: "Outfit", sans-serif;
+  color: #e5e7eb;
+
+  /* ❌ remove flex centering */
+  display: block;
+  margin: 0;
+}
+
+/* ===== MAIN GLASS CARD ===== */
+.main-card {
+  max-width: 1200px;
+  width: 100%;
+  padding: 2.8rem;
+  border-radius: 26px;
+  margin: 40px auto;
+  background: var(--glass-bg);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  border: 1px solid var(--glass-border);
+  box-shadow:
+    0 40px 90px rgba(0, 0, 0, 0.6),
+    inset 0 0 40px rgba(255, 255, 255, 0.05);
+
+  transform-style: preserve-3d;
+  transition: 
+    transform 0.6s ease,
+    box-shadow 0.6s ease;
+}
+.portfolio-animate {
+  transform-style: preserve-3d;
+  transition: transform 0.25s ease-out;
+  will-change: transform;
+}
+
+.card {
+  transform-style: preserve-3d;
+}
+
+.card-body {
+  transform: translateZ(25px);
+}
+.main-card:hover::before {
+  opacity: 1;
+}
+
+@keyframes float3d {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+.main-card {
+  animation: float3d 6s ease-in-out infinite;
+}
+
+/* ===== PROFILE SECTION ===== */
+.profile-section {
+  border-right: 1px solid rgba(255, 255, 255, 0.18);
+  padding-right: 1.8rem;
+}
+
+/* Profile Image */
+.avatar {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(250, 204, 21, 0.8);
+  margin-bottom: 1.5rem;
+}
+
+/* Profile text spacing */
+.profile-section h4 {
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.profile-section .role {
+  padding: 0.45rem 0.8rem;
+  font-size: 0.85rem;
+  margin-bottom: 1.8rem;
+  display: inline-block;
+}
+
+
+/* Profile list large gap */
+.info-list {
+  list-style: none;
+  padding: 0;
+}
+
+.info-list li {
+  margin-bottom: 1.1rem;   /* 👈 BIG GAP */
+  font-size: 0.95rem;
+}
+
+/* Social icons spacing */
+.social-links a {
+  font-size: 1.4rem;
+  margin: 0 0.6rem;
+  color: #facc15;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  color: #fde047;
+  cursor: pointer;
+}
+
+/* ===== CONTENT SECTION ===== */
+.content-section {
+  padding-left: 1.5rem;
+}
+
+/* ===== NAV ===== */
+.nav-pills .nav-link {
+  color: #e5e7eb;
+  margin-left: 0.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.nav-pills .nav-link.active {
+  background: rgba(250, 204, 21, 0.2);
+  color: #facc15;
+}
+
+/* ===== TEXT SPACING (IMPORTANT PART) ===== */
+h1, h2, h3 {
+  margin-bottom: 1rem;
+  letter-spacing: 0.4px;
+  font-weight: 600;
+}
+
+p {
+  margin-bottom: 1.2rem;
+  line-height: 2;
+  color: #d1d5db;
+}
+.section p{
+  font-weight: 10;
+  font-size: medium;
+}
+/* Make all sections consistent */
+/* ===== SECTION ANIMATION ===== */
+/* ===== SERVICE BOX ===== */
+.service-box {
+  background: #1f1f22;
+  border-radius: 16px;
+  padding: 22px;
+  height: 100%;
+  box-shadow: inset 0 0 0 rgba(0,0,0,0);
+  transition: all 0.3s ease;
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+.service-icon {
+  font-size: 28px;
+  color: #facc15;
+  margin-bottom: 12px;
+}
+
+.service-box h5 {
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.service-box p {
+  color: #9ca3af;
+  font-size: 14px;
+  margin: 0;
+}
+
+
+/* ===== PROJECT CARD ===== */
+
+/* ===== FORM ===== */
+.form-control {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: white;
+}
+
+.form-control::placeholder {
+  color: #cbd5f5;
+}
+
+.form-control:focus {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: none;
+  color: white;
+}
+
+/* ===== STICKY PROFILE ===== */
+.profile-section {
+  position: sticky;
+  top: 30px;
+  align-self: flex-start;
+  height: fit-content;
+}
+.role-badge {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 6px 14px;
+  font-size: 13px;
+  border-radius: 12px;
+  background: #2a2a2d;
+  color: #facc15;
+}
+
+/* Info Item */
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+/* Icon Box (Same for all) */
+.info-icon {
+  width: 42px;
+  height: 42px;
+  background: #2a2a2d;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #facc15;
+  font-size: 18px;
+}
+
+/* Text */
+.info-text small {
+  color: #9ca3af;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+/* Right content sections */
+.section {
+  display: none;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.4s ease;
+}
+
+.section.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Smooth animation */
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.timeline-wrapper {
+  position: relative;
+  padding-left: 50px;
+}
+
+.timeline-wrapper::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: #2f2f2f;
+}
+
+/* Section block */
+.block {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+/* Section icon */
+.block-icon {
+  position: absolute;
+  left: -50px;
+  top: 0;
+  width: 36px;
+  height: 36px;
+  background: #1c1c1c;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f5c76a;
+  z-index: 2;
+}
+
+/* Timeline items */
+.timeline-item {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 30px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Yellow dots */
+.timeline-item .dot {
+  position: absolute;
+  left: -38px;
+  top: 6px;
+  width: 10px;
+  height: 10px;
+  background: #f5c76a;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.timeline-item h5 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.timeline-item .date {
+  color: #f5c76a;
+  font-size: 14px;
+}
+.block-content h5{
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.info-toggle-btn {
+  display: none !important;
+}
+/* Initial state */
+.portfolio-animate {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* Delay for smooth stagger effect */
+.profile-section {
+  border-right: 1px solid rgba(255,255,255,0.18);
+  padding-right: 1.8rem;
+  position: sticky;
+  top: 30px;
+  height: fit-content;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card a.btn {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover a.btn {
+  opacity: 1;
+}
+
+/* Prevent image overflow */
+.card {
+  overflow: hidden;
+}
+
+/* Image smooth zoom */
+.card img {
+  transition: transform 0.5s ease;
+}
+
+/* Zoom image on card hover */
+.card:hover img {
+  transform: scale(1.12);
+}
+/* Input styling */
+/* Wrapper */
+.input-icon {
+  position: relative;
+}
+
+/* Icons */
+.input-icon i {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: #ffc107;
+  font-size: 16px;
+  pointer-events: none;
+}
+
+/* Textarea icon fix */
+.textarea-icon i {
+  top: 20px;
+  transform: none;
+}
+
+/* Input */
+.custom-input {
+  padding-left: 45px;
+  background: #1e1e1e;
+  border: 1px solid #333;
+  color: #fff;
+  border-radius: 12px;
+}
+
+.custom-input::placeholder {
+  color: #aaa;
+}
+
+.custom-input:focus {
+  background: #1e1e1e;
+  border-color: #ffc107;
+  box-shadow: none;
+  color: #fff;
+}
+.main-card,
+.content-section {
+  overflow: visible !important;
+}
+.nav-pills .nav-link.active {
+  background: rgba(78, 65, 15, 0.15);
+  box-shadow: 0 0 12px rgba(250,204,21,0.35);
+}
+.skills-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+}
+
+.skill-card {
+  background: #1f1f22;
+  border-radius: 16px;
+  padding: 18px 12px;
+  text-align: center;
+  box-shadow: inset 0 0 0 rgba(0,0,0,0);
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(0,0,0,0.45);
+}
+
+.skill-icon {
+  font-size: 28px;
+  color: #facc15;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.skill-card h6 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #e5e7eb;
+  margin: 0;
+}
+.info-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.info-link:hover {
+  text-decoration: underline;
+}
