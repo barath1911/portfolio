@@ -59,7 +59,7 @@ I enjoy learning new technologies, solving problems, and developing clean, scala
 
 ## 🤝 Connect With Me
 - 💼 LinkedIn: https://www.linkedin.com/in/barath11
-- 💻 GitHub: https://github.com/BarathK
+- 💻 GitHub: https://github.com/barath1911
 
 ---
 
